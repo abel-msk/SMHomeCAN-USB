@@ -1,0 +1,4488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FilterDialog</class>
+ <widget class="QDialog" name="FilterDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>888</width>
+    <height>822</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777212</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,1,0">
+     <item>
+      <widget class="QFrame" name="FilterFrame">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_98">
+            <property name="text">
+             <string>Rule Name</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="RuleName"/>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_17">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Filter with ID</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="RuleID">
+            <property name="text">
+             <string>132</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_15">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_97">
+            <property name="text">
+             <string>Parent</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="ParentRuleID">
+            <property name="maxVisibleItems">
+             <number>4</number>
+            </property>
+            <property name="minimumContentsLength">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Description:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="RuleDescr"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Filter  Action: </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="wait_rbtn">
+            <property name="text">
+             <string>Wait for packet</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="send_rbtn">
+            <property name="text">
+             <string>Send packet</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Timeout</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="timeout"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_95">
+            <property name="text">
+             <string>(msec)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="useMask">
+            <property name="text">
+             <string>Use mask</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_16">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="IDFrame">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0">
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>CAN Packet ID</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="7" column="2">
+           <widget class="QSpinBox" name="f14">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="3">
+           <widget class="QSpinBox" name="f13">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="8">
+           <widget class="QSpinBox" name="f08">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="14">
+           <widget class="QLabel" name="label_19">
+            <property name="text">
+             <string>19</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>30</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="16">
+           <widget class="QLabel" name="label_21">
+            <property name="text">
+             <string>17</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="17">
+           <widget class="QSpinBox" name="m00">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="16">
+           <widget class="QSpinBox" name="m01">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="16">
+           <widget class="QSpinBox" name="f01">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="12">
+           <widget class="QSpinBox" name="f05">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="10">
+           <widget class="QSpinBox" name="m07">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="6">
+           <widget class="QSpinBox" name="f10">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="11">
+           <widget class="QSpinBox" name="f06">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="15">
+           <widget class="QSpinBox" name="m02">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="10">
+           <widget class="QSpinBox" name="f07">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="14">
+           <widget class="QSpinBox" name="m03">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="8">
+           <widget class="QSpinBox" name="m08">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="12">
+           <widget class="QSpinBox" name="m05">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="3">
+           <widget class="QSpinBox" name="m13">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="7">
+           <widget class="QSpinBox" name="m09">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="4">
+           <widget class="QSpinBox" name="f12">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="13">
+           <widget class="QSpinBox" name="m04">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="4">
+           <widget class="QSpinBox" name="m12">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="3">
+           <widget class="QLabel" name="label_26">
+            <property name="text">
+             <string>13</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="2">
+           <widget class="QSpinBox" name="m14">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="6">
+           <widget class="QLabel" name="label_29">
+            <property name="text">
+             <string>10</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="5">
+           <widget class="QSpinBox" name="m11">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLabel" name="label_24">
+            <property name="text">
+             <string>15</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="6">
+           <widget class="QSpinBox" name="m10">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="13">
+           <widget class="QSpinBox" name="f04">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="15">
+           <widget class="QSpinBox" name="f02">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="7">
+           <widget class="QSpinBox" name="f09">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="7">
+           <widget class="QLabel" name="label_30">
+            <property name="text">
+             <string>9</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="17">
+           <widget class="QLabel" name="label_39">
+            <property name="text">
+             <string>0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="11">
+           <widget class="QSpinBox" name="m22">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="6">
+           <widget class="QSpinBox" name="m26">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="4">
+           <widget class="QSpinBox" name="m28">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="14">
+           <widget class="QSpinBox" name="f03">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="4">
+           <widget class="QLabel" name="label_27">
+            <property name="text">
+             <string>12</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="5">
+           <widget class="QLabel" name="label_28">
+            <property name="text">
+             <string>11</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>28</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="10">
+           <widget class="QSpinBox" name="m23">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QSpinBox" name="m15">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="17">
+           <widget class="QSpinBox" name="f00">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="11">
+           <widget class="QSpinBox" name="m06">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="3">
+           <widget class="QSpinBox" name="m29">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="13">
+           <widget class="QLabel" name="label_18">
+            <property name="text">
+             <string>20</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="15">
+           <widget class="QSpinBox" name="m18">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="13">
+           <widget class="QSpinBox" name="m20">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="12">
+           <widget class="QSpinBox" name="m21">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="10">
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>23</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="14">
+           <widget class="QSpinBox" name="m19">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="8">
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>24</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="7">
+           <widget class="QSpinBox" name="m25">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="5">
+           <widget class="QSpinBox" name="m27">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="8">
+           <widget class="QSpinBox" name="m24">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="7">
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>25</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="11">
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>22</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="6">
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>26</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="9">
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="15">
+           <widget class="QSpinBox" name="f18">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2">
+           <widget class="QLabel" name="label_25">
+            <property name="text">
+             <string>14</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSpinBox" name="f31">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="18">
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="7" column="1">
+           <widget class="QSpinBox" name="f15">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="6">
+           <widget class="QSpinBox" name="f26">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QSpinBox" name="m30">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QSpinBox" name="f29">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="12">
+           <widget class="QSpinBox" name="f21">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QSpinBox" name="f30">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="7">
+           <widget class="QSpinBox" name="f25">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="8">
+           <widget class="QSpinBox" name="f24">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="13">
+           <widget class="QSpinBox" name="f20">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="10">
+           <widget class="QSpinBox" name="f23">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="5">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>27</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="15">
+           <widget class="QLabel" name="label_37">
+            <property name="text">
+             <string>2</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="14">
+           <widget class="QLabel" name="label_36">
+            <property name="text">
+             <string>3</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="13">
+           <widget class="QLabel" name="label_35">
+            <property name="text">
+             <string>4</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="15">
+           <widget class="QLabel" name="label_20">
+            <property name="text">
+             <string>18</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="17">
+           <widget class="QSpinBox" name="f16">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="showGroupSeparator" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="17">
+           <widget class="QSpinBox" name="m16">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>31</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="8">
+           <widget class="QLabel" name="label_31">
+            <property name="text">
+             <string>8</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="12">
+           <widget class="QLabel" name="label_17">
+            <property name="text">
+             <string>21</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>29</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="17">
+           <widget class="QLabel" name="label_22">
+            <property name="text">
+             <string>16</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="16">
+           <widget class="QSpinBox" name="m17">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="11">
+           <widget class="QLabel" name="label_33">
+            <property name="text">
+             <string>6</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="10">
+           <widget class="QLabel" name="label_32">
+            <property name="text">
+             <string>7</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="12">
+           <widget class="QLabel" name="label_34">
+            <property name="text">
+             <string>5</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="16">
+           <widget class="QLabel" name="label_38">
+            <property name="text">
+             <string>1</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="5">
+           <widget class="QSpinBox" name="f11">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="16">
+           <widget class="QSpinBox" name="f17">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QSpinBox" name="m31">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="4">
+           <widget class="QSpinBox" name="f28">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="showGroupSeparator" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="14">
+           <widget class="QSpinBox" name="f19">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="5">
+           <widget class="QSpinBox" name="f27">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="11">
+           <widget class="QSpinBox" name="f22">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="prefix">
+             <string/>
+            </property>
+            <property name="maximum">
+             <number>1</number>
+            </property>
+            <property name="displayIntegerBase">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_42">
+            <property name="text">
+             <string>M:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_43">
+            <property name="text">
+             <string>F:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_44">
+            <property name="text">
+             <string>F:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="label_45">
+            <property name="text">
+             <string>M:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="4">
+           <widget class="QLabel" name="label_40">
+            <property name="text">
+             <string>High bytes</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="4">
+           <widget class="QLabel" name="label_23">
+            <property name="text">
+             <string>Low bytes</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="19">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>ID Type</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="frtype_std_rbtn">
+              <property name="text">
+               <string>Standart type</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="frtype_ext_rbtn">
+              <property name="text">
+               <string>Extended type</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_46">
+              <property name="text">
+               <string>Hex ID</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="frameid_hex_edit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>87</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="sizeIncrement">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>0x0000000F</string>
+              </property>
+              <property name="maxLength">
+               <number>10</number>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_96">
+              <property name="text">
+               <string>Hex mask</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="frameidmask_hex_edit">
+              <property name="maximumSize">
+               <size>
+                <width>87</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>0xFFFFFFFF</string>
+              </property>
+              <property name="maxLength">
+               <number>10</number>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_10">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="clear_id_btn">
+              <property name="text">
+               <string>Clear</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="DataFrame">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <property name="lineWidth">
+        <number>-1</number>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,0,1">
+        <property name="spacing">
+         <number>-1</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_41">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>CAN Data bytes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_13">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="useData">
+            <property name="text">
+             <string>Use databytes in filter</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_19">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_79">
+            <property name="text">
+             <string>Data length</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="data_len_spin">
+            <property name="minimumSize">
+             <size>
+              <width>38</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>38</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="maximum">
+             <number>8</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_14">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="text">
+             <string>Clear</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>67</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_87">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>36</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>7</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_88">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>36</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>6</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_89">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>36</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>5</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_90">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>36</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>4</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_91">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>36</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>3</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_92">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>36</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>2</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_93">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>36</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>1</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_94">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>36</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_12">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+          <property name="lineWidth">
+           <number>1</number>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>821</width>
+             <height>718</height>
+            </rect>
+           </property>
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="18" column="5">
+               <widget class="QSpinBox" name="DB74">
+                <property name="suffix">
+                 <string/>
+                </property>
+                <property name="prefix">
+                 <string/>
+                </property>
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="9">
+               <widget class="QSpinBox" name="DF10">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="7">
+               <widget class="QSpinBox" name="DF12">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="11">
+               <widget class="QLabel" name="label_66">
+                <property name="text">
+                 <string>HEX view</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QSpinBox" name="DF16">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QSpinBox" name="DF17">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QSpinBox" name="DB27">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="8">
+               <widget class="QSpinBox" name="DF11">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="4">
+               <widget class="QSpinBox" name="DB25">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="label_81">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="11">
+               <widget class="QLabel" name="label_76">
+                <property name="text">
+                 <string>HEX view</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="12">
+               <widget class="QLineEdit" name="BDH4">
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="0">
+               <widget class="QLabel" name="label_82">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="8">
+               <widget class="QSpinBox" name="DB51">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="9">
+               <widget class="QSpinBox" name="DF50">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="0">
+               <widget class="QLabel" name="label_73">
+                <property name="text">
+                 <string>Byte 5</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="4">
+               <widget class="QSpinBox" name="DB55">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="12">
+               <widget class="QLineEdit" name="BDH3">
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="2">
+               <widget class="QSpinBox" name="DF57">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="6">
+               <widget class="QSpinBox" name="DB53">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="6">
+               <widget class="QSpinBox" name="DF53">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="3">
+               <widget class="QSpinBox" name="DB56">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="11">
+               <widget class="QLabel" name="label_74">
+                <property name="text">
+                 <string>HEX view</string>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="1">
+               <widget class="QLabel" name="label_78">
+                <property name="text">
+                 <string>M:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="11">
+               <widget class="QLabel" name="label_75">
+                <property name="text">
+                 <string>HEX view</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="5">
+               <widget class="QSpinBox" name="DB54">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="1">
+               <widget class="QLabel" name="label_72">
+                <property name="text">
+                 <string>M:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="14" column="0">
+               <widget class="QLabel" name="label_84">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="9">
+               <widget class="QSpinBox" name="DF30">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="5">
+               <widget class="QSpinBox" name="DF74">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="5">
+               <widget class="QSpinBox" name="DB64">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="8">
+               <widget class="QSpinBox" name="DB31">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="5">
+               <widget class="QSpinBox" name="DB34">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="3">
+               <widget class="QSpinBox" name="DB66">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="6">
+               <widget class="QSpinBox" name="DB63">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="4">
+               <widget class="QSpinBox" name="DF85">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="3">
+               <widget class="QSpinBox" name="DB26">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="0">
+               <widget class="QLabel" name="label_57">
+                <property name="text">
+                 <string>Byte 8</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="13">
+               <spacer name="horizontalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="1" column="5">
+               <widget class="QSpinBox" name="DF14">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="6">
+               <widget class="QSpinBox" name="DF33">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="7">
+               <widget class="QSpinBox" name="DB12">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="3">
+               <widget class="QSpinBox" name="DF36">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="10">
+               <spacer name="horizontalSpacer_9">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Minimum</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="4">
+               <widget class="QSpinBox" name="DB15">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_47">
+                <property name="text">
+                 <string>Byte 1</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
+               <widget class="QSpinBox" name="DF15">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="4">
+               <widget class="QSpinBox" name="DB35">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="2">
+               <widget class="QSpinBox" name="DF47">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="2">
+               <widget class="QSpinBox" name="DB47">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="3">
+               <widget class="QSpinBox" name="DF46">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="2">
+               <widget class="QSpinBox" name="DB67">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="2">
+               <widget class="QSpinBox" name="DF37">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLabel" name="label_62">
+                <property name="text">
+                 <string>M:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="8">
+               <widget class="QSpinBox" name="DF21">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="1">
+               <widget class="QLabel" name="label_59">
+                <property name="text">
+                 <string>F:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="6">
+               <widget class="QSpinBox" name="DF23">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="label_67">
+                <property name="text">
+                 <string>Byte 3</string>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="8">
+               <widget class="QSpinBox" name="DB71">
+                <property name="suffix">
+                 <string/>
+                </property>
+                <property name="prefix">
+                 <string/>
+                </property>
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="9">
+               <widget class="QSpinBox" name="DF70">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="7">
+               <widget class="QSpinBox" name="DF72">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="1">
+               <widget class="QLabel" name="label_70">
+                <property name="text">
+                 <string>M:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="9">
+               <widget class="QSpinBox" name="DF40">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="8">
+               <widget class="QSpinBox" name="DF81">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="2">
+               <widget class="QSpinBox" name="DF27">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="3">
+               <widget class="QSpinBox" name="DF26">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="2">
+               <widget class="QSpinBox" name="DF67">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="8">
+               <widget class="QSpinBox" name="DB41">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="4">
+               <widget class="QSpinBox" name="DF75">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="1">
+               <widget class="QLabel" name="label_56">
+                <property name="text">
+                 <string>M:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="9">
+               <widget class="QSpinBox" name="DB70">
+                <property name="suffix">
+                 <string/>
+                </property>
+                <property name="prefix">
+                 <string/>
+                </property>
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="4">
+               <widget class="QSpinBox" name="DB85">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="5">
+               <widget class="QSpinBox" name="DF84">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="7">
+               <widget class="QSpinBox" name="DF82">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="3">
+               <widget class="QSpinBox" name="DB46">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="8">
+               <widget class="QSpinBox" name="DB81">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="9">
+               <widget class="QSpinBox" name="DB80">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="7">
+               <widget class="QSpinBox" name="DF52">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="4">
+               <widget class="QSpinBox" name="DF55">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="7">
+               <widget class="QSpinBox" name="DB52">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="6">
+               <widget class="QSpinBox" name="DB23">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="5">
+               <widget class="QSpinBox" name="DB24">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="11">
+               <widget class="QLabel" name="label_54">
+                <property name="text">
+                 <string>HEX view</string>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="8">
+               <widget class="QSpinBox" name="DF51">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="0">
+               <widget class="QLabel" name="label_65">
+                <property name="text">
+                 <string>Byte 6</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="7">
+               <widget class="QSpinBox" name="DB22">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="5">
+               <widget class="QSpinBox" name="DF54">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="9">
+               <widget class="QSpinBox" name="DB30">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="5">
+               <widget class="QSpinBox" name="DB44">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="6">
+               <widget class="QSpinBox" name="DF43">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="4">
+               <widget class="QSpinBox" name="DF45">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="1">
+               <widget class="QLabel" name="label_55">
+                <property name="text">
+                 <string>F:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="2">
+               <widget class="QSpinBox" name="DF87">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="3">
+               <widget class="QSpinBox" name="DF86">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="12">
+               <widget class="QLineEdit" name="BDH8">
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="2">
+               <widget class="QSpinBox" name="DF77">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="9">
+               <widget class="QSpinBox" name="DF80">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="6">
+               <widget class="QSpinBox" name="DF83">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="3">
+               <widget class="QSpinBox" name="DB86">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="3">
+               <widget class="QSpinBox" name="DF76">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="3">
+               <widget class="QSpinBox" name="DB36">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="7">
+               <widget class="QSpinBox" name="DB82">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="5">
+               <widget class="QSpinBox" name="DB84">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="6">
+               <widget class="QSpinBox" name="DB83">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="12">
+               <widget class="QLineEdit" name="BDH1">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLabel" name="label_53">
+                <property name="text">
+                 <string>F:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="2">
+               <widget class="QSpinBox" name="DB57">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="3">
+               <widget class="QSpinBox" name="DB76">
+                <property name="suffix">
+                 <string/>
+                </property>
+                <property name="prefix">
+                 <string/>
+                </property>
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="7">
+               <widget class="QSpinBox" name="DB42">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="2">
+               <widget class="QSpinBox" name="DB77">
+                <property name="suffix">
+                 <string/>
+                </property>
+                <property name="prefix">
+                 <string/>
+                </property>
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="6">
+               <widget class="QSpinBox" name="DB73">
+                <property name="suffix">
+                 <string/>
+                </property>
+                <property name="prefix">
+                 <string/>
+                </property>
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="label_49">
+                <property name="text">
+                 <string>F:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QSpinBox" name="DB17">
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="6">
+               <widget class="QSpinBox" name="DB13">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="11">
+               <widget class="QLabel" name="label_48">
+                <property name="text">
+                 <string>HEX view</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="9">
+               <widget class="QSpinBox" name="DB10">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="8">
+               <widget class="QSpinBox" name="DB11">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="3">
+               <widget class="QSpinBox" name="DF66">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="7">
+               <widget class="QSpinBox" name="DF22">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="9">
+               <widget class="QSpinBox" name="DF20">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="4">
+               <widget class="QSpinBox" name="DF25">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="8">
+               <widget class="QSpinBox" name="DB21">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="1">
+               <widget class="QLabel" name="label_71">
+                <property name="text">
+                 <string>F:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="6">
+               <widget class="QSpinBox" name="DF13">
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="label_50">
+                <property name="text">
+                 <string>M:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="7">
+               <widget class="QSpinBox" name="DB72">
+                <property name="suffix">
+                 <string/>
+                </property>
+                <property name="prefix">
+                 <string/>
+                </property>
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_51">
+                <property name="text">
+                 <string>Byte 2</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="6">
+               <widget class="QSpinBox" name="DB43">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="6">
+               <widget class="QSpinBox" name="DB33">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="12">
+               <widget class="QLineEdit" name="BDH2">
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="1">
+               <widget class="QLabel" name="label_77">
+                <property name="text">
+                 <string>F:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="8">
+               <widget class="QSpinBox" name="DF31">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="12">
+               <widget class="QLineEdit" name="BDH6">
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="4">
+               <widget class="QSpinBox" name="DF65">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="7">
+               <widget class="QSpinBox" name="DB32">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="5">
+               <widget class="QSpinBox" name="DF34">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="5">
+               <widget class="QSpinBox" name="DF64">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="1">
+               <widget class="QLabel" name="label_58">
+                <property name="text">
+                 <string>M:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="8">
+               <widget class="QSpinBox" name="DF71">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="6">
+               <widget class="QSpinBox" name="DF73">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="1">
+               <widget class="QLabel" name="label_63">
+                <property name="text">
+                 <string>F:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="9">
+               <widget class="QSpinBox" name="DB60">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="11">
+               <widget class="QLabel" name="label_61">
+                <property name="text">
+                 <string>HEX View</string>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="12">
+               <widget class="QLineEdit" name="BDH7">
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="1">
+               <widget class="QLabel" name="label_64">
+                <property name="text">
+                 <string>M:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="2">
+               <widget class="QSpinBox" name="DB87">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="7">
+               <widget class="QSpinBox" name="DB62">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="8">
+               <widget class="QSpinBox" name="DF61">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="9">
+               <widget class="QSpinBox" name="DB40">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="0">
+               <widget class="QLabel" name="label_60">
+                <property name="text">
+                 <string>Byte 7</string>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="6">
+               <widget class="QSpinBox" name="DF63">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="8">
+               <widget class="QSpinBox" name="DB61">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="12">
+               <widget class="QLineEdit" name="BDH5">
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="9">
+               <widget class="QSpinBox" name="DB50">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="9">
+               <widget class="QSpinBox" name="DB20">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="3">
+               <widget class="QSpinBox" name="DF56">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_80">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="0">
+               <widget class="QLabel" name="label_83">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="20" column="0">
+               <widget class="QLabel" name="label_85">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="17" column="0">
+               <widget class="QLabel" name="label_86">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="4">
+               <widget class="QSpinBox" name="DF35">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="9">
+               <widget class="QSpinBox" name="DF60">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="4">
+               <widget class="QSpinBox" name="DB45">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="5">
+               <widget class="QSpinBox" name="DF44">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="7">
+               <widget class="QSpinBox" name="DF42">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="8">
+               <widget class="QSpinBox" name="DF41">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="7">
+               <widget class="QSpinBox" name="DF32">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="2">
+               <widget class="QSpinBox" name="DB37">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="4">
+               <widget class="QSpinBox" name="DB65">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="4">
+               <widget class="QSpinBox" name="DB75">
+                <property name="suffix">
+                 <string/>
+                </property>
+                <property name="prefix">
+                 <string/>
+                </property>
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="7">
+               <widget class="QSpinBox" name="DF62">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="0">
+               <widget class="QLabel" name="label_68">
+                <property name="text">
+                 <string>Bute 4</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="5">
+               <widget class="QSpinBox" name="DF24">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="11">
+               <widget class="QLabel" name="label_52">
+                <property name="text">
+                 <string>HEX view</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QSpinBox" name="DB16">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="5">
+               <widget class="QSpinBox" name="DB14">
+                <property name="maximum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QLabel" name="label_69">
+                <property name="text">
+                 <string>F:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="12">
+               <widget class="QLineEdit" name="BDM1">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="12">
+               <widget class="QLineEdit" name="BDM2">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="12">
+               <widget class="QLineEdit" name="BDM3">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="12">
+               <widget class="QLineEdit" name="BDM4">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="12">
+               <widget class="QLineEdit" name="BDM5">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="12">
+               <widget class="QLineEdit" name="BDM6">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="12">
+               <widget class="QLineEdit" name="BDM7">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="12">
+               <widget class="QLineEdit" name="BDM8">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer_18">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="cancel_btn">
+         <property name="text">
+          <string>Cancel</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="ok_btn">
+         <property name="text">
+          <string>OK</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
