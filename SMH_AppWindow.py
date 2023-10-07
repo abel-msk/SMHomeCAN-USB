@@ -193,6 +193,7 @@ class AppWindow(QMainWindow, Ui_MainWindow):
         self.FTree.use_proto = False
         self.filter_filename = None
 
+        self.connect_status = STATUS_NOT_CONNECTED
         self.set_status(STATUS_NOT_CONNECTED)
         self.show()
 
@@ -268,10 +269,19 @@ class AppWindow(QMainWindow, Ui_MainWindow):
         elif new_status == STATUS_WORK:
             self.StatusTxt.setText("Running")
             self.StatusTxt.setStyleSheet("background-color: rgb(79, 226, 97);  border-radius: 5; padding: 2")
+        self.connect_status = new_status
+
+    def set_status_down(self):
+        if self.connect_status == STATUS_CONNECTED:
+            self.set_status(STATUS_NOT_CONNECTED)
+        elif self.connect_status == STATUS_WORK:
+            self.set_status(STATUS_CONNECTED)
 
     def on_thread_error(self, msg):
         logger.debug("Connect error: %s", msg)
         self.show_dialog(DLG_ERROR, msg)
+        self.set_status_down()
+
 
     def on_filter_view_changed(self, check):
         logger.debug("Filter view changed %s", check)

@@ -60,7 +60,6 @@ class SDialog(Ui_SettingsDialog):
 
     def select_color(self, ptr):
         color: QColor = QColorDialog.getColor()
-
         if color.isValid():
             logger.debug("Got color: %s", color.name())
             self.data[ptr] = color.name()
@@ -75,12 +74,14 @@ class SDialog(Ui_SettingsDialog):
             "quick brown fox jumps over the lazy dog" +
             "</span>"
         )
+        self.RcvTest.clear()
         self.RcvTest.appendHtml(
             '<span style="background-color:' + self.data[SMH.ST_COLOR_RCV_BG] +
             '; color:' + self.data[SMH.ST_COLOR_RCV_FG] + '">' +
             "quick brown fox jumps over the lazy dog" +
             "</span>"
         )
+        self.SendTest.clear()
         self.SendTest.appendHtml(
             '<span style="background-color:' + self.data[SMH.ST_COLOR_SEND_BG] +
             '; color:' + self.data[SMH.ST_COLOR_SEND_FG] + '">' +
