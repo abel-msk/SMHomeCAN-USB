@@ -22,9 +22,6 @@ from gs_usb.constants import (
 from gs_usb.gs_usb_structures import DeviceMode
 from usb.core import USBError
 
-import SMH
-from CAN_USB_Receiver import CANReceiver
-
 logger = logging.getLogger(__name__)
 logger.setLevel(level=logging.DEBUG)
 handler = logging.StreamHandler(stream=sys.stderr)
@@ -34,6 +31,18 @@ logger.addHandler(handler)
 
 # https://github.com/jxltom/gs_usb
 # https://docs.python.org/3/library/exceptions.html
+
+# gs_usb mode
+GS_CAN_MODE_RESET = 0
+GS_CAN_MODE_START = 1
+
+# gs_usb control request
+_GS_USB_BREQ_HOST_FORMAT = 0
+_GS_USB_BREQ_BITTIMING = 1
+_GS_USB_BREQ_MODE = 2
+_GS_USB_BREQ_BERR = 3
+_GS_USB_BREQ_BT_CONST = 4
+_GS_USB_BREQ_DEVICE_CONFIG = 5
 
 
 class ConnectError(Exception):
@@ -58,7 +67,6 @@ class CANLibDrv(object):
             "cap": ""
         }
         self.buff = queue.Queue()
-        self.can_receiver = CANReceiver(self.buff)
         self.cur_thread = None
         self.is_started = False
 
@@ -74,13 +82,6 @@ class CANLibDrv(object):
         else:
             self.dev = GsUsb.find(dev.bus, dev.address)
             logger.debug("Found USB device %s", self.dev)
-
-
-        # devs = GsUsb.scan()
-        # if len(devs) == 0:
-        #     logger.error("Can not find gs_usb device")
-        #     raise ConnectError("Can not find gs_usb device",1)
-        # self.dev = devs[0]
 
         # Configuration
         if self.bitrate > 0:
@@ -104,31 +105,9 @@ class CANLibDrv(object):
         # Start device
         # flags = self.dev.gs_usb.device_capability.feature
         # flags &= self.device_capability.feature
-
-        # gs_usb mode
-        GS_CAN_MODE_RESET = 0
-        GS_CAN_MODE_START = 1
-
-        # gs_usb control request
-        _GS_USB_BREQ_HOST_FORMAT = 0
-        _GS_USB_BREQ_BITTIMING = 1
-        _GS_USB_BREQ_MODE = 2
-        _GS_USB_BREQ_BERR = 3
-        _GS_USB_BREQ_BT_CONST = 4
-        _GS_USB_BREQ_DEVICE_CONFIG = 5
-
+        self.dev.device_flags = 0
         mode = DeviceMode(GS_CAN_MODE_START, 0)
         self.dev.gs_usb.ctrl_transfer(0x41, _GS_USB_BREQ_MODE, 0, 0, mode.pack())
-
-        # try:
-        #     self.dev.start()
-        #     self.device_flags = self.dev.device_flags
-        # except USBError as err:
-        #     # self.dev.stop()
-        #     self.connect(self.dev)
-        #     # self.device_flags = self.dev.device_flags
-        #     # time.sleep(1)
-        #     self.dev.start()
 
         # Start worker
         self.is_started = True
@@ -147,28 +126,11 @@ class CANLibDrv(object):
         if not self.dev.send(can_frame):
             raise ConnectError("Send Error", 4)
 
-    def read_start(self):
-        if self.status():
-            self.can_receiver.start_read(self.dev)
-        else:
-            raise ConnectError("CAN_USB adapter does not ready.")
-
-    def read_stop(self):
-        self.can_receiver.stop_read()
-
-    def rcv(self, tout=0):
-        reply = None
-        iframe = self.can_receiver.get_pkt(tout)
-        if iframe is not None:
-            reply = {
-                SMH.FR_ERROR: iframe.is_error_frame,
-                SMH.FR_ID_EXT: iframe.is_extended_id,
-                SMH.FR_ID: iframe.can_id,
-                SMH.FR_DATA: not iframe.is_remote_frame,
-                SMH.FR_DATA_LEN: iframe.can_dlc,
-                SMH.FR_DATA_AR: copy.copy(iframe.data)
-            }
-        return reply
+    def rcv(self, tout=100):
+        iframe = GsUsbFrame()
+        if self.dev.read(iframe, tout):
+            return iframe
+        return None
 
     def status(self):
         if self.dev is None:

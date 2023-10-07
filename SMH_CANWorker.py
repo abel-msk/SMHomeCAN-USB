@@ -9,7 +9,6 @@ from CAN_Packet import CANPacket
 import logging
 import sys
 import SMH
-from CAN_USB_Receiver import CANReceiver
 from SMH_FilterTree import FilterElement
 
 logger = logging.getLogger(__name__)
@@ -114,7 +113,7 @@ class CANWorker(QRunnable):
 
     def _stop(self):
         self.drv.stop()
-        pass
+
 
 
     @pyqtSlot()
@@ -212,7 +211,6 @@ class CANWorker(QRunnable):
 
     def capture_all(self):
         self._start()  # Start USB
-        self.drv.read_start()
         try:
             while True:
                 pkt: CANPacket = self.read_packet()
@@ -223,7 +221,6 @@ class CANWorker(QRunnable):
         except Exception as err:
             raise err
         finally:
-            self.drv.read_stop()
             self._stop()
 
     def capture_test(self):
@@ -247,7 +244,6 @@ class CANWorker(QRunnable):
 
     def repeated_execution(self, filter_list: list, timeout: int = 0, repeat=False):
         self._start()
-        self.drv.read_start()
         try:
             while True:
                 if filter_list[0].action == SMH.ACTION_WAIT:
@@ -257,18 +253,18 @@ class CANWorker(QRunnable):
 
                 if self.is_abort():
                     raise Aborting
+
                 if not repeat:
-                    self.drv.read_stop()
-                    return
+                    break
 
                 if timeout > 0:
                     time.sleep(timeout)
 
         except Exception as err:
             # logger.debug("Receive Exception:  %s", err)
-            self.drv.read_stop()
-            self._stop()
             raise err
+        finally:
+            self._stop()
 
     def wait_and_send(self, filter_list):
         is_match = False
@@ -314,14 +310,15 @@ class CANWorker(QRunnable):
         receive = False
         pkt = None
         while not receive:
-            frame = self.drv.rcv(tout=1)  # timeout in secs
-            if frame is not None:
+            iframe = self.drv.rcv(tout=1)  # timeout in secs
+            if iframe is not None:
                 pkt = CANPacket()
-                pkt.dataFrame = frame[SMH.FR_DATA]
-                pkt.extFrame = frame[SMH.FR_ID_EXT]
-                pkt.frameID = frame[SMH.FR_ID]
-                pkt.dataLen = frame[SMH.FR_DATA_LEN]
-                pkt.dataAr = copy.copy(frame[SMH.FR_DATA_AR])
+                pkt.dataFrame = not iframe.is_remote_frame
+                pkt.extFrame = iframe.is_extended_id
+                pkt.frameID = iframe.can_id
+                pkt.dataLen = iframe.can_dlc
+                pkt.dataAr = copy.copy(iframe.data)
+                # SMH.FR_ERROR: iframe.is_error_frame,
 
                 if logger.isEnabledFor(logging.DEBUG):
                     logger.debug("PKT RECEIVE \t %s", pkt)

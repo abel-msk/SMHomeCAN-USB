@@ -584,7 +584,7 @@ class AppWindow(QMainWindow, Ui_MainWindow):
         buff = "{:>10} {} | ".format(filter_name, "S" if direction == SMH_CANWorker.PKT_SEND else "R")
         buff = buff.replace(' ', '&nbsp;')
 
-        packet_view =""
+        packet_view = ""
         if self.use_proto_chk.isChecked():
             packet_view = self.proto.to_string(pkt.frameID) + " | " + pkt.data_hex()
         else:
