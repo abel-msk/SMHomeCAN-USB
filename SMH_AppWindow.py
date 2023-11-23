@@ -336,7 +336,7 @@ class AppWindow(QMainWindow, Ui_MainWindow):
         if self.is_proto:
             add_dialog.setup_proto_UI(self.proto)
 
-        add_dialog.c.ok_signal.connect(self.on_filter_add)
+        add_dialog.comm.ok_signal.connect(self.on_filter_add)
         add_dialog.set_ruleID(self.FTree.increase_RuleID())
         if len(self.RulesTree.selectedItems()) > 0:
             curSelection = self.RulesTree.selectedItems()[0]

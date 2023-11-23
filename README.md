@@ -28,7 +28,7 @@ SMHomeCAN provides the following function:
 
 ## Platform
 Thi app is tested on MacOS 12 with Python 3.11 for MKS CANable pro (gs_usb firmware) adapter.
-Uses PYQT5 and SG_USB CAN adapter driver
+Uses PYQT5 and SG_USB CAN adapter driver.
 Because it is written on python, it can run on other platform (Win And Unix)
 
 ## Required
@@ -41,6 +41,9 @@ PyQt5-Qt5                 5.15.2
 PyQt5-sip                 12.12.1
 pyusb                     1.2.1
 PyYAML                    6.0.1
+libusb1                   3.0.0
+pyusb                     1.2.1
+ 
 ```
 All requirements can be installed with PIP in venv environment
 
@@ -54,13 +57,17 @@ dist/SMHomeCAN-USB
 ```
 
 ## RUN
-Wor run from source code in the current directory:
+For run from source code in the current directory:
 ```
 source venv/bin/activate
 python main.py
 ```
 
+## See also
+- [CANable-MKS gs-usb firmware ](https://github.com/candle-usb/candleLight_fw)
+- [https://pypi.org/project/gs-usb/](https://pypi.org/project/gs-usb/)
+
 ##  About
 Author: Artem Belyaev - artem.belyaev@gmail.com
-Licanse: MIT
+License: MIT
 
