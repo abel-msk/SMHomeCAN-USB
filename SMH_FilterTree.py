@@ -88,13 +88,20 @@ class FilterElement(object):
         self.parent_id = 0
         self.name = ""
         self.use_data = False
+        self.sort_order = 0
 
-    def add_child(self, child_obj):
-        self.child.append(child_obj)
+    def add_child(self, child_obj, ins_index = -1):
+        if ins_index > 0 :
+            self.child.insert(ins_index, child_obj)
+        else:
+            self.child.append(child_obj)
         child_obj.parent = self
 
     def get_children(self):
         return self.child
+
+    def get_parent(self):
+        return self.parent
 
     def has_child(self):
         return len(self.child) > 0
@@ -115,7 +122,7 @@ class FilterElement(object):
     def id_bin_str(self) -> str:
         bit_ar = list(self.base.id_bin())
         if not self.mask_empty:
-            mask_ar =  self.mask.id_bin()
+            mask_ar = self.mask.id_bin()
             for i in range(0, len(bit_ar)):
                 if mask_ar[i] == "0":
                     bit_ar[i] = "-"
@@ -232,11 +239,12 @@ class FilterElement(object):
             SMH.FL_TIMEOUT: self.wait_time,
             SMH.FL_DESCR: self.descr,
             SMH.FL_MASK_EMPTY: self.mask_empty,
-            SMH.FL_USE_DATA: self.use_data
+            SMH.FL_USE_DATA: self.use_data,
+            SMH.FL_SORT_ORDER: self.sort_order
         }
         return jDict
 
-    def fromDict(self, obj:dict):
+    def fromDict(self, obj: dict):
         self.name = obj[SMH.FL_NAME]
         self.ruleId = obj[SMH.FL_ID]
         self.mask_empty = obj[SMH.FL_MASK_EMPTY]
@@ -249,6 +257,8 @@ class FilterElement(object):
         self.wait_time = obj[SMH.FL_TIMEOUT]
         self.descr = obj[SMH.FL_DESCR]
         self.use_data = obj[SMH.FL_USE_DATA] if SMH.FL_USE_DATA in obj else True
+        self.use_data = obj[SMH.FL_SORT_ORDER] if SMH.FL_SORT_ORDER in obj else -1
+
 
     def fromJSON(self, str):
         self.fromDict = json.loads(str)
@@ -262,6 +272,8 @@ class FilterTree:
         self.nextRuleID = 0
         self.set_header()
         self.use_proto = False
+        self.tree_view.setSortingEnabled(True)
+        self.tree_view.sortByColumn(5, Qt.AscendingOrder)
         self.proto: CustomProto = None
 
     def set_proto(self, proto: CustomProto):
@@ -269,13 +281,14 @@ class FilterTree:
         self.proto = proto
 
     def set_header(self):
-        self.tree_view.setColumnCount(5)
+        self.tree_view.setColumnCount(6)
 
         self.tree_view.headerItem().setText(0, "ID")
         self.tree_view.headerItem().setText(1, "A")
         self.tree_view.headerItem().setText(2, "Time(ms)")
         self.tree_view.headerItem().setText(3, "FrameID")
         self.tree_view.headerItem().setText(4, "Data bytes")
+        self.tree_view.setColumnHidden(5, True)
         # self.tree_view.headerItem().setSizeHint(0)
 
         header = self.tree_view.header()
@@ -333,26 +346,70 @@ class FilterTree:
         parent.remove_child(el)
         return el.view_link
 
-    def el_create(self, jObj: dict):
+    def el_create(self, jObj: dict, after_id = -1):
         el = FilterElement()
         el.fromDict(jObj)
-        if el.parent_id == 0:
-            self.root_el.add_child(el)
-        else:
+        parent_el = self.root_el
+
+        if el.parent_id != 0:
             parent_el: FilterElement = self.find_by_id(el.parent_id)
-            if parent_el is not None:
-                parent_el.add_child(el)
-            else:
-                raise RuntimeError("Inconsistent rules tree. Cannot find parent by ID={}".format(el.parent_id))
+
+        if parent_el is not None:
+            # if after_id >= 0:
+            #     after_el: FilterElement = self.find_by_id(after_id)
+            self.el_insert(el, parent_el, self.find_by_id(after_id) if after_id >= 0 else None)
+            # parent_el.add_child(el, self.find_by_id(after_id) if after_id >= 0 else None)
+        else:
+            raise RuntimeError("Inconsistent rules tree. Cannot find parent by ID={}".format(el.parent_id))
 
         if self.nextRuleID <= el.ruleId:
             self.nextRuleID = el.ruleId + 1
         return el
 
-    def el_insert(self, el: FilterElement, parent_el: FilterElement):
-        parent_el.add_child(el)
-        if self.nextRuleID <= el.ruleId:
-            self.nextRuleID = el.ruleId + 1
+    def el_insert(self, el: FilterElement, parent_el: FilterElement, after_el: FilterElement = None):
+
+        ch_list: list = parent_el.get_children()
+        ins_index = -1
+        '''
+           Process sort order for new element and all brothers
+        '''
+        if after_el is None:
+            '''
+               if element inserted at the end of list, just assign next sort iorder after last one
+            '''
+            if len(ch_list) > 0:
+                after_el = ch_list[-1]
+                el.sort_order = after_el.sort_order + 1
+            else:
+                el.sort_order = 1
+
+        elif after_el.ruleId == parent_el.ruleId:
+            '''
+               if element inserted at the beginning of list. Shift sort order for all children
+            '''
+            el.sort_order = ch_list[1].sort_order if ch_list[1].sort_order >= 0 else 1
+            for nb_el in ch_list:
+                nb_el.sort_order += 1
+            ins_index = 1
+        else:
+            '''
+               if element inserted inside children list, increase sort order num after inserted position
+            '''
+            ins_index = 1
+            found = False
+            for nb_el in ch_list:
+                if not found and nb_el.ruleId == after_el.ruleId:
+                    found = True
+                    el.sort_order = nb_el.sort_order + 1
+                elif found:
+                    nb_el.sort_order += 1
+                else:
+                    ins_index += 1
+
+        parent_el.add_child(el, ins_index)
+        # # parent_el.add_child(el, ins_index)
+        # if self.nextRuleID <= el.ruleId:
+        #     self.nextRuleID = el.ruleId + 1
 
     def item_remove(self, item):
         root_item = self.tree_view.invisibleRootItem()
@@ -393,6 +450,9 @@ class FilterTree:
         item.setData(3, Qt.UserRole, el)
         item.setText(4, el.data_hex_str())
         item.setData(4, Qt.UserRole, el)
+
+        item.setText(5, str(el.sort_order))
+        item.setData(5, Qt.UserRole, el)
         return item
 
     def increase_RuleID(self):
@@ -426,4 +486,4 @@ class FilterTree:
             in_file.close()
             self.display_tree()
         except Exception as err:
-            logger.error(err)
+            logger.error(err,exc_info=True)

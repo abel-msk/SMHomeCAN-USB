@@ -35,6 +35,7 @@ FL_MASK_FR = "mask"
 FL_ACTION = "action"
 FL_TIMEOUT = "timeout"
 FL_USE_DATA = "use_data"
+FL_SORT_ORDER = "sort_order"
 
 BG_COLOR_MATCH = "#fffacc"
 COLOR_MATCH = "#FFFFFF"

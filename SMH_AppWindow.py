@@ -282,7 +282,6 @@ class AppWindow(QMainWindow, Ui_MainWindow):
         self.show_dialog(DLG_ERROR, msg)
         self.set_status_down()
 
-
     def on_filter_view_changed(self, check):
         logger.debug("Filter view changed %s", check)
         self.FTree.use_proto = True if check > 0 else False
@@ -336,19 +335,26 @@ class AppWindow(QMainWindow, Ui_MainWindow):
         if self.is_proto:
             add_dialog.setup_proto_UI(self.proto)
 
-        add_dialog.comm.ok_signal.connect(self.on_filter_add)
-        add_dialog.set_ruleID(self.FTree.increase_RuleID())
         if len(self.RulesTree.selectedItems()) > 0:
             curSelection = self.RulesTree.selectedItems()[0]
             cur_el: FilterElement = curSelection.data(0, Qt.UserRole)
             add_dialog.set_parentRuleID(cur_el.ruleId)
+
+        add_dialog.comm.ok_signal.connect(self.on_filter_add)
+        add_dialog.set_ruleID(self.FTree.increase_RuleID())
 
         dialog_window.setWindowModality(Qt.ApplicationModal)
         # dialog_window.show()
         dialog_window.exec_()
 
     def on_filter_add(self, data: dict):
-        el = self.FTree.el_create(data)
+        insert_after_id = -1
+        # Get currently selected element
+        if len(self.RulesTree.selectedItems()) > 0:
+            curSelection = self.RulesTree.selectedItems()[0]
+            cur_el: FilterElement = curSelection.data(0, Qt.UserRole)
+            insert_after_id = cur_el.ruleId
+        el = self.FTree.el_create(data, insert_after_id)
         self.FTree.item_insert(el)
 
     def on_filter_edit_open(self, index):
